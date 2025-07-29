@@ -1,0 +1,64 @@
+import styled from "styled-components";
+
+export const IntroSectionContainer = styled.div`
+  width: 100vw;
+  padding: 48px;
+  justify-content: center;
+  background-image: url(/Background_Intro.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px;
+`;
+
+export const IntroSectionAvatar = styled.img`
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 4px #FFFF solid;
+`;
+
+export const IntroSectionAvatarContainer = styled.div`
+  position: relative;
+`;
+export const IntroSectionAvatarBadge = styled.img`
+  height: 25;
+  width: 31px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
+export const IntroSectionBriefing1 = styled.h5`
+  font-family: Inconsolata;
+  color: #c0c4ce;
+  font-size: 30px;
+  strong {
+    color:rgb(49, 142, 248);
+  }
+  margin-top: 56px;
+  font-weight: 400;
+  
+`;
+
+export const IntroSectionBriefing2 = styled.h2`
+  font-family: Asap;
+  color: #e2e4e9;
+  font-size: 56px;
+  margin-top: 10px;
+  font-weight: 600;
+`;
+
+export const IntroSectionBriefing3 = styled.h6`
+  font-family: Maven Pro;
+  color: #878ea1;
+  font-size: 20px;
+  margin-top: 20px;
+  max-width: 680px;
+  font-weight: 400;
+  text-align: center;
+`;
+

@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #16181d;
+}
+h2,
+h5,
+h6 {
+  margin: 0;
+}
