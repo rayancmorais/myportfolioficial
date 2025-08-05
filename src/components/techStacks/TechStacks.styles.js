@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const TechStackContainer = styled.div`
   display: inline-flex;
   justify-content: center;
@@ -24,6 +25,7 @@ export const TechStackWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 // export const TechItem = styled.div`

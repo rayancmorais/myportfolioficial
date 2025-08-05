@@ -1,24 +1,11 @@
 import styled from "styled-components";
 
-export const IntroSectionContainer = styled.div`
-  width: 100vw;
-  padding: 48px;
-  justify-content: center;
-  background-image: url(/Background_Intro.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding-top: 90px;
-`;
-
 export const IntroSectionAvatar = styled.img`
   border-radius: 50%;
   width: 96px;
   height: 96px;
   object-fit: cover;
-  border: 4px #FFFF solid;
+  border: 4px #ffff solid;
 `;
 
 export const IntroSectionAvatarContainer = styled.div`
@@ -37,11 +24,10 @@ export const IntroSectionBriefing1 = styled.h5`
   color: #c0c4ce;
   font-size: 30px;
   strong {
-    color:rgb(49, 142, 248);
+    color: rgb(49, 142, 248);
   }
   margin-top: 56px;
   font-weight: 400;
-  
 `;
 
 export const IntroSectionBriefing2 = styled.h2`
@@ -60,5 +46,12 @@ export const IntroSectionBriefing3 = styled.h6`
   max-width: 680px;
   font-weight: 400;
   text-align: center;
-`;
 
+  @media (max-width: 768px) {
+    text-align: justify;
+    br {
+      display: none;
+    }
+  }
+  padding: 0 16px;
+`;

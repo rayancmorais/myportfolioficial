@@ -3,22 +3,19 @@ import {
   PrimatyButtonSvg,
 } from "./PrimaryButton.styled";
 
-
-export const PrimaryButton = ({ label }) => {
+export const PrimaryButton = ({ label, href, onPress }) => {
   return (
-    
-      <PrimaryButtonContainer>
-        {label}
-        <PrimatyButtonSvg fill="none" viewBox="0 0 24 24">
-          <path
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            stroke-width="2"
-            stroke="currentColor"
-            d="M5 12h14M13 6l6 6-6 6"
-          />
-        </PrimatyButtonSvg>
-      </PrimaryButtonContainer>
-
+    <PrimaryButtonContainer href={href} onClick={onPress}>
+      {label}
+      <PrimatyButtonSvg fill="none" viewBox="0 0 24 24">
+        <path
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="2"
+          stroke="currentColor"
+          d="M5 12h14M13 6l6 6-6 6"
+        />
+      </PrimatyButtonSvg>
+    </PrimaryButtonContainer>
   );
 };

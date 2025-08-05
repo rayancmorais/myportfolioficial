@@ -1,5 +1,4 @@
 import {
-  IntroSectionContainer,
   IntroSectionAvatar,
   IntroSectionAvatarBadge,
   IntroSectionAvatarContainer,
@@ -7,10 +6,11 @@ import {
   IntroSectionBriefing2,
   IntroSectionBriefing3,
 } from "./IntroSection.styles";
+import { SectionContainer } from "../../common";
 
 export const IntroSection = () => {
   return (
-    <IntroSectionContainer>
+    <SectionContainer backgroundImage="/Background_Intro.svg">
       <IntroSectionAvatarContainer>
         <IntroSectionAvatar src="/Aang.jpg" />
         <IntroSectionAvatarBadge src="/Vector.svg" />
@@ -25,12 +25,12 @@ export const IntroSection = () => {
         Started in UX/UI design with Figma, now I build seamless web experiences
         using React and style them smooth with Styled Components. Fluent in
         English & Portuguese. Currently pursuing a Bachelor’s degree in Computer
-        Software Engineering to deepen my development skills <br></br>—because why stop
-        now?
+        Software Engineering to deepen my development skills <br />- because why
+        stop now?
         {/* Transformo necessidades em aplicações reais, evolventes e funcionais.
         Desenvolvo sistemas através da minha paixão pela tecnologia,
         contribuindo com soluções inovadoras e eficazes para desafios complexos. */}
       </IntroSectionBriefing3>
-    </IntroSectionContainer>
+    </SectionContainer>
   );
 };

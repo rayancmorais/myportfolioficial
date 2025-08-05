@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "React 18 Course 2025 ",
+    "issuer": "Udemy",
+    "date": "August 2025",
+    "imageUrl": "https://www.clariontech.com/hs-fs/hubfs/React%2018%20New%20Features.jpg?width=1020&height=620&name=React%2018%20New%20Features.jpg",
+    "link": "/react18.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Complete Web & Mobile Designer: UI/UX, Figma",
+    "issuer": "Udemy",
+    "date": "Febuary 2025",
+    "imageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/a22136347164d79bf408377a75232169c4837a11-3840x2160.png?w=1632&h=918&q=75&fit=max&auto=format",
+    "link": "/figma.pdf"
+  },
+  {
+    "id": 3,
+    "title": "The Complete JavaScript Course 2025",
+    "issuer": "Udemy",
+    "date": "July 2025",
+    "imageUrl": "https://projetodesenvolve.online/asset-v1:ProjetoDesenvolve+JS1+01+type@asset+block@1628644950-javascript.png",
+    "link": "/completejs.pdf"
+  },
+  {
+    "id": 4,
+    "title": "Algorithms and Programming Logic",
+    "issuer": "Udemy",
+    "date": "July 2025",
+    "imageUrl": "https://miro.medium.com/v2/resize:fit:900/0*TDgnPm06sS0np--2.jpg",
+    "link": "/algorithm.pdf"
+  }
+]

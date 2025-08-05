@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "title": "Aplicação de Gestão de Tarefas",
+    "description": "Uma aplicação web completa para gerir tarefas pessoais e de equipa, com funcionalidades de criação, edição, categorização e acompanhamento de progresso.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Styled Components"
+    ],
+    "imageUrl": "https://placehold.co/400x250/A0A0A0/FFFFFF?text=Projeto+Tarefas",
+    "link": "https://example.com/project-task-manager"
+  },
+  {
+    "id": 2,
+    "title": "Website de E-commerce de Livros",
+    "description": "Um website de comércio eletrónico responsivo para venda de livros, incluindo carrinho de compras, sistema de utilizadores e integração de pagamentos.",
+    "technologies": ["Next.js", "Stripe API", "Tailwind CSS", "Firebase"],
+    "imageUrl": "https://placehold.co/400x250/B0B0B0/FFFFFF?text=Projeto+Ecommerce",
+    "link": "https://example.com/project-ecommerce"
+  },
+  {
+    "id": 3,
+    "title": "Dashboard de Análise de Dados",
+    "description": "Um dashboard interativo para visualizar e analisar grandes volumes de dados, com gráficos dinâmicos e filtros personalizáveis.",
+    "technologies": ["Vue.js", "D3.js", "Python", "Flask", "PostgreSQL"],
+    "imageUrl": "https://placehold.co/400x250/C0C0C0/FFFFFF?text=Projeto+Dashboard",
+    "link": "https://example.com/project-dashboard"
+  },
+  {
+    "id": 4,
+    "title": "Jogo de Plataforma 2D",
+    "description": "Um jogo de plataforma 2D simples desenvolvido com JavaScript puro, apresentando mecânicas básicas de movimento e colisão.",
+    "technologies": ["HTML5 Canvas", "JavaScript", "CSS"],
+    "imageUrl": "https://placehold.co/400x250/D0D0D0/FFFFFF?text=Projeto+Jogo",
+    "link": "https://example.com/project-game"
+  }
+]

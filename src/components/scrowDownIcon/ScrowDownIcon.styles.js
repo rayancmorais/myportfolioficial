@@ -4,7 +4,7 @@ export const ScrowDownIconContainer = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-  margin: 94px;
+  margin-top:  100px;
 `;
 
 export const ScrowDownIconStyled = styled.img`
