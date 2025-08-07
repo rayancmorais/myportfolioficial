@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SectionTitle = styled.h2`
   font-size: 20px;
   margin-bottom: 10px;
+  margin-top: 10px;
   color: #e3646e;
   position: relative;
   display: flex;
@@ -10,6 +11,7 @@ export const SectionTitle = styled.h2`
   justify-content: center;
   margin-top: 2px;
   margin-bottom: 20px;
+  font-family: Inconsolata;
 `;
 
 export const SectionSubtitle = styled.h4`
@@ -19,8 +21,9 @@ export const SectionSubtitle = styled.h4`
   display: flex;
   text-align: center;
   justify-content: center;
-  margin-top: 2px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-family: Inconsolata;
 `;
 
 export const CertificatesGrid = styled.div`
@@ -65,12 +68,14 @@ export const CardContent = styled.div`
   padding: 1.5rem;
   text-align: left;
   flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+  font-family: Inconsolata;
 `;
 
 export const CertificateTitle = styled.h3`
   font-size: 1.6rem;
   margin-bottom: 0.8rem;
   color: #34495e;
+  font-family: Inconsolata;
 
   @media (max-width: 768px) {
     font-size: 1.4rem;
@@ -81,6 +86,7 @@ export const CertificateDetails = styled.p`
   font-size: 1rem;
   color: #7f8c8d;
   margin-bottom: 0.5rem;
+  font-family: Inconsolata;
 `;
 
 export const CertificateLink = styled.a`
@@ -94,6 +100,7 @@ export const CertificateLink = styled.a`
   margin-top: 1rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
   align-self: flex-start; /* Alinha o botão à esquerda dentro do card */
+  font-family: Inconsolata;
 
   &:hover {
     background-color: #2980b9;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const ContactCard = styled.div`
-  background-color:  #16181d;
+  background-color: #16181d;
   padding: 2rem;
   border-radius: 1.5rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgb(62, 91, 157),
+    0 10px 10px -5px rgb(36, 125, 241);
   max-width: 56rem;
   width: 100%;
 
@@ -13,6 +13,10 @@ export const ContactCard = styled.div`
     padding: 3rem;
   }
 `;
+
+// rgb(62, 91, 157),
+//       rgb(0, 0, 0),
+//       rgb(36, 125, 241)
 
 // Styled components for the text
 export const Heading = styled.h2`
@@ -71,6 +75,7 @@ export const ContactButton = styled.a`
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-decoration: none;
+  font-family: Inconsolata;
 
   &:hover {
     transform: scale(1.05);

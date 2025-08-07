@@ -21,6 +21,7 @@ export const PrimaryButtonContainer = styled.button`
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 100px;
   color: #c0c4ce;
+  font-family: Inconsolata;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;

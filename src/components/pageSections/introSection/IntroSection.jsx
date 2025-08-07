@@ -7,29 +7,36 @@ import {
   IntroSectionBriefing3,
 } from "./IntroSection.styles";
 import { SectionContainer } from "../../common";
+import { useTranslation, Trans } from "react-i18next";
 
 export const IntroSection = () => {
+  // https://react.i18next.com/latest/usetranslation-hook
+  const { t } = useTranslation();
   return (
     <SectionContainer backgroundImage="/Background_Intro.svg">
       <IntroSectionAvatarContainer>
-        <IntroSectionAvatar src="/Aang.jpg" />
+        <IntroSectionAvatar src="/profilepicture.png" />
         <IntroSectionAvatarBadge src="/Vector.svg" />
       </IntroSectionAvatarContainer>
       <IntroSectionBriefing1>
-        Hello World! My name is <strong>Rayan Morais</strong>
+        {/* https://react.i18next.com/latest/trans-component */}
+        {/* Trans component to replace values or add styles to tags */}
+        <Trans
+          i18nKey="home.intro_section_title"
+          components={{ bold: <strong /> }}
+        />
+        {/* {t("home.intro_section_title")} */}
       </IntroSectionBriefing1>
       <IntroSectionBriefing2>
-        I'm a full-stack junior developer{" "}
+        {/* https://react.i18next.com/latest/usetranslation-hook */}
+        {/* simples usage of translation hook */}
+        {t("home.intro_section_subtitle")}
       </IntroSectionBriefing2>
       <IntroSectionBriefing3>
-        Started in UX/UI design with Figma, now I build seamless web experiences
-        using React and style them smooth with Styled Components. Fluent in
-        English & Portuguese. Currently pursuing a Bachelor’s degree in Computer
-        Software Engineering to deepen my development skills <br />- because why
-        stop now?
-        {/* Transformo necessidades em aplicações reais, evolventes e funcionais.
-        Desenvolvo sistemas através da minha paixão pela tecnologia,
-        contribuindo com soluções inovadoras e eficazes para desafios complexos. */}
+        <Trans
+          i18nKey="home.intro_section_briefing"
+          components={{ break: <br /> }}
+        />
       </IntroSectionBriefing3>
     </SectionContainer>
   );

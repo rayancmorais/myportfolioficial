@@ -1,40 +1,40 @@
 [
   {
     "id": 1,
-    "title": "Aplicação de Gestão de Tarefas",
-    "description": "Uma aplicação web completa para gerir tarefas pessoais e de equipa, com funcionalidades de criação, edição, categorização e acompanhamento de progresso.",
-    "technologies": [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Styled Components"
-    ],
-    "imageUrl": "https://placehold.co/400x250/A0A0A0/FFFFFF?text=Projeto+Tarefas",
-    "link": "https://example.com/project-task-manager"
+    "title": "Portfolio Landing Page ",
+    "description": "This project is a personal portfolio landing page designed to showcase my skills, projects, and professional experience. The page acts as a central hub for potential employers and collaborators to learn about me and my work.",
+    "technologies": ["React", "Figma", "JavaScript", "Styled Components"],
+    "imageUrl": "/website.png",
+    "link": "https://github.com/rayancmorais/myportfolioficial.git"
   },
   {
     "id": 2,
-    "title": "Website de E-commerce de Livros",
-    "description": "Um website de comércio eletrónico responsivo para venda de livros, incluindo carrinho de compras, sistema de utilizadores e integração de pagamentos.",
-    "technologies": ["Next.js", "Stripe API", "Tailwind CSS", "Firebase"],
-    "imageUrl": "https://placehold.co/400x250/B0B0B0/FFFFFF?text=Projeto+Ecommerce",
-    "link": "https://example.com/project-ecommerce"
+    "title": "Movideux",
+    "description": "It is a full-stack web application that serves as a Netflix-style movie platform. It features an interface where users can browse, search for, and discover movies. The project highlights my ability to build dynamic, data-driven applications with a focus on user experience.",
+    "technologies": ["React", "NodeJS", "ReactRouter", "State&Effect"],
+    "imageUrl": "/moviedux.png",
+    "link": "https://github.com/rayancmorais/moviedeux.git"
   },
   {
     "id": 3,
-    "title": "Dashboard de Análise de Dados",
-    "description": "Um dashboard interativo para visualizar e analisar grandes volumes de dados, com gráficos dinâmicos e filtros personalizáveis.",
-    "technologies": ["Vue.js", "D3.js", "Python", "Flask", "PostgreSQL"],
-    "imageUrl": "https://placehold.co/400x250/C0C0C0/FFFFFF?text=Projeto+Dashboard",
-    "link": "https://example.com/project-dashboard"
+    "title": "Chronos",
+    "description": "Chronos is a web-based Pomodoro Technique Timer designed to help users boost their productivity and manage their time effectively. Inspired by the popular time management technique, this application breaks down work into focused intervals, separated by short breaks.",
+    "technologies": [
+      "React",
+      "NodeJS",
+      "TypeScript",
+      "ContextAPI",
+      "ReactRouter"
+    ],
+    "imageUrl": "/chronos2.png",
+    "link": "https://github.com/rayancmorais/chronos-pomodoro.git"
   },
   {
     "id": 4,
-    "title": "Jogo de Plataforma 2D",
-    "description": "Um jogo de plataforma 2D simples desenvolvido com JavaScript puro, apresentando mecânicas básicas de movimento e colisão.",
-    "technologies": ["HTML5 Canvas", "JavaScript", "CSS"],
-    "imageUrl": "https://placehold.co/400x250/D0D0D0/FFFFFF?text=Projeto+Jogo",
-    "link": "https://example.com/project-game"
+    "title": "CodiCash",
+    "description": "Collaborating with a development team, I designed the UX/UI on Figma and we built the front-end challange for a financial management interface for Codi Academy units. We developed the design into a functional and responsive interface using React. The final product is currently deployed on Vercel, delivering a clean, intuitive user experience with a scalable architecture, ready for future API integration.",
+    "technologies": ["Figma", "React", "Tailwind", "TypeScript"],
+    "imageUrl": "/academy.png",
+    "link": "https://codi-vercel3-0.vercel.app"
   }
 ]

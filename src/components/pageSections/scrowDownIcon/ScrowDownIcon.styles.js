@@ -11,4 +11,5 @@ export const ScrowDownIconStyled = styled.img`
   width: 32px;
   height: 32px;
   object-fit: scale-down;
+
 `;

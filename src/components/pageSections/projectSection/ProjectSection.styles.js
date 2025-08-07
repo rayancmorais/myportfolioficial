@@ -5,7 +5,7 @@ export const SectionContainer = styled.section`
   padding: 4rem 2rem;
   background-color: #16181d;
   text-align: center;
-  font-family: "Inter", sans-serif;
+ font-family: Inconsolata;
   color: #333;
 
   @media (max-width: 768px) {
@@ -19,6 +19,7 @@ export const SectionTitle = styled.h2`
   color: #2c3e50;
   position: relative;
   display: inline-block;
+  font-family: Inconsolata;
 
   &::after {
     content: "";
@@ -28,7 +29,6 @@ export const SectionTitle = styled.h2`
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #e67e22; /* Cor de destaque para projetos */
     border-radius: 2px;
   }
 
@@ -80,12 +80,14 @@ export const CardContent = styled.div`
   padding: 1.5rem;
   text-align: left;
   flex-grow: 1;
+  font-family: Inconsolata;
 `;
 
 export const ProjectTitle = styled.h3`
   font-size: 1.8rem;
   margin-bottom: 0.8rem;
   color: #34495e;
+  font-family: Inconsolata;
 
   @media (max-width: 768px) {
     font-size: 1.6rem;
@@ -97,6 +99,7 @@ export const ProjectDescription = styled.p`
   color: #7f8c8d;
   line-height: 1.6;
   margin-bottom: 1rem;
+  font-family: Inconsolata;
 `;
 
 export const TechnologiesList = styled.div`
@@ -105,6 +108,7 @@ export const TechnologiesList = styled.div`
   gap: 0.6rem;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  font-family: Inconsolata;
 `;
 
 export const TechnologyTag = styled.span`
@@ -114,11 +118,12 @@ export const TechnologyTag = styled.span`
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 500;
+  font-family: Inconsolata;
 `;
 
 export const ProjectLink = styled.a`
   display: inline-block;
-  background-color: #e67e22;
+  background-color:#3498db;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
@@ -129,7 +134,7 @@ export const ProjectLink = styled.a`
   align-self: flex-start;
 
   &:hover {
-    background-color: #d35400;
+    background-color:#2980b9;
     transform: translateY(-2px);
   }
 `;

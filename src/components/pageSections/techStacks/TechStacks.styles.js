@@ -12,6 +12,7 @@ export const TechStackContainer = styled.div`
   color: #c0c4ce;
   position: relative;
   box-shadow: 0 3px 10px -3px rgba(31, 50, 146, 0.55);
+  font-family: Inconsolata;
 `;
 
 export const TechIcon = styled.img`

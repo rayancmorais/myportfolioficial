@@ -7,6 +7,7 @@ import {
 
 import { ContactCard, ButtonGrid, ContactButton } from "./ContactSection.syles";
 import { SectionContainer } from "../../common";
+import { useTranslation } from "react-i18next";
 
 import {
   SectionTitle,
@@ -14,17 +15,16 @@ import {
 } from "../certificationSection/CertificationSection.styles";
 
 export const ContactSection = () => {
+  const { t } = useTranslation();
   return (
     <>
       <SectionContainer id="contact">
         <ContactCard>
-          <SectionTitle>Contact</SectionTitle>
+          <SectionTitle>{t("home.contact_section_title")}</SectionTitle>
           <SectionSubtitle>
-            I'd love to hear from you. Feel free to reach out through any of
-            these channels!
+            {t("home.contact_section_subtitle")}
           </SectionSubtitle>
           <ButtonGrid>
-            {/* WhatsApp button with dynamic color */}
             <ContactButton
               href="https://wa.me/5532998214618?text=Hi!"
               target="_blank"
@@ -36,7 +36,6 @@ export const ContactSection = () => {
               </span>
             </ContactButton>
 
-            {/* Email button with dynamic color */}
             <ContactButton
               href="mailto:rayan_cm2021@icloud.com"
               color="#EF4444"
@@ -47,7 +46,6 @@ export const ContactSection = () => {
               </span>
             </ContactButton>
 
-            {/* LinkedIn button with dynamic color */}
             <ContactButton
               href="https://www.linkedin.com/in/rayancmorais"
               target="_blank"
@@ -59,7 +57,6 @@ export const ContactSection = () => {
               </span>
             </ContactButton>
 
-            {/* Instagram button with dynamic color */}
             <ContactButton
               href="https://www.instagram.com/rayancmorais?igsh=b2E4M3c1M2tyY3hn&utm_source=qr"
               target="_blank"

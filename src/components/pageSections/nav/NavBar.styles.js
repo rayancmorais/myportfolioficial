@@ -8,6 +8,7 @@ export const NavBarContainer = styled.div`
   flex-wrap: wrap;
   padding-top: 60px;
   background-color: rgba(0, 0, 0, 0);
+  
 
   @media (max-width: 768px) {
     display: none;

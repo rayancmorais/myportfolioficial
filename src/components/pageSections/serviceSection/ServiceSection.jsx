@@ -10,39 +10,36 @@ import { SectionSubtitle } from "../certificationSection/CertificationSection.st
 
 import { SectionTitle } from "../certificationSection/CertificationSection.styles";
 import { SectionContainer } from "../../common";
-
-const servicesData = [
-  {
-    icon: Code,
-    title: "Website Development",
-    description:
-      "Crafting responsive, high-performance, and scalable websites tailored to your business needs, from concept to deployment.",
-  },
-  {
-    icon: Layout,
-    title: "User Interface (UI)",
-    description:
-      "Designing intuitive and aesthetically pleasing user interfaces that enhance user experience and drive engagement.",
-  },
-  {
-    icon: Figma,
-    title: "Figma UX/UI Design",
-    description:
-      "Transforming ideas into wireframes, prototypes, and high-fidelity designs using Figma, focusing on user-centric solutions.",
-  },
-  {
-    icon: Database,
-    title: "API & Database Solutions",
-    description:
-      "Developing robust APIs and optimizing database structures to ensure seamless data flow and efficient application performance.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const ServiceSection = () => {
+  const { t } = useTranslation();
+  const servicesData = [
+    {
+      icon: Code,
+      title: t("home.service_section_obj_title1"),
+      description: t("home.service_section_obj_description1"),
+    },
+    {
+      icon: Layout,
+      title: t("home.service_section_obj_title2"),
+      description: t("home.service_section_obj_description2"),
+    },
+    {
+      icon: Figma,
+      title: t("home.service_section_obj_title3"),
+      description: t("home.service_section_obj_description3"),
+    },
+    {
+      icon: Database,
+      title: t("home.service_section_obj_title4"),
+      description: t("home.service_section_obj_description4"),
+    },
+  ];
   return (
     <SectionContainer id="services">
-      <SectionTitle>Assistance</SectionTitle>
-      <SectionSubtitle>What I provide</SectionSubtitle>
+      <SectionTitle>{t("home.service_section_title")}</SectionTitle>
+      <SectionSubtitle>{t("home.service_section_subtitle")}</SectionSubtitle>
       <ServicesGrid>
         {servicesData.map((service, index) => (
           <ServiceCard key={index}>

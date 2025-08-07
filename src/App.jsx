@@ -1,14 +1,12 @@
-import { IntroSection } from "./components/pageSections/introSection";
-import { ScrowDownIcon } from "./components/scrowDownIcon/ScrowDownIcon";
-import { TechStack } from "./components/techStacks/techStack";
-import { PrimaryButton } from "./components/buttons/primaryButton/PrimaryButton";
-import { NavBar } from "./components/nav/NavBar";
-import { CertificatesSection } from "./components/pageSections/certificationSection";
-import { ProjectsSection } from "./components/pageSections/projectSection/ProjectSection";
-import { PortfolioSection } from "./components/pageSections/portfolioSection/PortfolioSection";
-import { ServiceSection } from "./components/pageSections/serviceSection/ServiceSection";
-import { ContactSection } from "./components/pageSections/contactSection/ContactSection";
+import { NavBar } from "./components/pageSections/nav/NavBar";
+import { LanguageButtons } from "./components/buttons/languageBtn/LanguageButton";
 import styled from "styled-components";
+import { Home } from "./components/pages/Home";
+// https://react.i18next.com/latest/i18nextprovider
+// Provider to inject translation context on children (whole app in this case)
+import { I18nextProvider } from "react-i18next";
+// translations setup
+import i18n from "./translations";
 
 const AppContainer = styled.div`
   display: flex;
@@ -26,39 +24,17 @@ function App() {
       behavior: "smooth",
     });
   };
+
   return (
-    <AppContainer>
-      <NavBar>
-        <PrimaryButton
-          label="Certification"
-          onPress={() => onPressNavItem("certificates")}
-        />
-        <PrimaryButton
-          label="Assistance"
-          onPress={() => onPressNavItem("services")}
-        />
-        <PrimaryButton
-          label="Project"
-          onPress={() => onPressNavItem("projects")}
-        />
-        <PrimaryButton
-          label="Education"
-          onPress={() => onPressNavItem("portfolio")}
-        />
-        <PrimaryButton
-          label="Contact"
-          onPress={() => onPressNavItem("contact")}
-        />
-      </NavBar>
-      <IntroSection />
-      <TechStack />
-      <ScrowDownIcon />
-      <CertificatesSection />
-      <ServiceSection />
-      <ProjectsSection />
-      <PortfolioSection />
-      <ContactSection />
-    </AppContainer>
+    // https://react.i18next.com/latest/i18nextprovider
+    // Provider to inject translation context on children (whole app in this case)
+    <I18nextProvider i18n={i18n}>
+      <AppContainer>
+        <LanguageButtons />
+        <NavBar onPressNavItem={onPressNavItem} />
+        <Home />
+      </AppContainer>
+    </I18nextProvider>
   );
 }
 
