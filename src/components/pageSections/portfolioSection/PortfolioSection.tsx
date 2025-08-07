@@ -33,7 +33,7 @@ export const PortfolioSection = () => {
           target="_blank" // Abre o PDF numa nova aba
           rel="noopener noreferrer" // Recomendado para segurança ao usar target="_blank"
         >
-          Ver Portólio PDF em Português
+          Ver Portfólio PDF em Português
         </PortfolioButton>
 
         <PortfolioButton
