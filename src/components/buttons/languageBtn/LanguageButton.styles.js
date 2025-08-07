@@ -39,18 +39,18 @@ export const LanguageButtonContainer = styled.div`
 // The button styled component
 export const LanguageButton = styled.button`
   /* Core button styles */
-  background: rgb(229, 240, 255);
-  color: rgb(36, 125, 241);
+  background: rgb(33, 36, 41);
+  color: rgb(248, 248, 248);
   font-size: 10px;
   border: 1px solid rgb(36, 125, 241);
   border-radius: 20px;
-  padding: 0.8rem 1.5rem;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 0 0 0.5rem rgb(36, 125, 241);
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
   text-align: center;
-  margin: 10px;
+  margin-top:15px;
   letter-spacing: 0.1rem;
   font-family: Inconsolata;
 

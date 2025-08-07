@@ -12,7 +12,8 @@ import {
 import { SectionContainer } from "../../common";
 import { useTranslation, Trans } from "react-i18next";
 
-const portfolioPdfUrl = "/portfolioo.pdf";
+const portfolioPT = "/portbr.pdf";
+const portfolioEng = "/porteng.pdf";
 
 export const PortfolioSection = () => {
   const { t } = useTranslation();
@@ -28,7 +29,7 @@ export const PortfolioSection = () => {
       </SectionSubtitle>
       <PortfolioContent>
         <PortfolioButton
-          href={portfolioPdfUrl}
+          href={portfolioPT}
           target="_blank" // Abre o PDF numa nova aba
           rel="noopener noreferrer" // Recomendado para segurança ao usar target="_blank"
         >
@@ -36,7 +37,7 @@ export const PortfolioSection = () => {
         </PortfolioButton>
 
         <PortfolioButton
-          href={portfolioPdfUrl}
+          href={portfolioEng}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -44,7 +45,7 @@ export const PortfolioSection = () => {
         </PortfolioButton>
 
         <PdfPreviewContainer>
-          <PdfIframe src={portfolioPdfUrl} title="Meu Portfólio PDF" />
+          <PdfIframe src={portfolioEng} title="Meu Portfólio PDF" />
         </PdfPreviewContainer>
       </PortfolioContent>
     </SectionContainer>
