@@ -57,7 +57,7 @@ export const ProjectsSection = () => {
       description:t("home.project_section_obj_description4"),
       technologies: ["Figma", "React", "Tailwind", "TypeScript"],
       imageUrl: "/academy.png",
-      link: "https://codi-vercel3-0.vercel.app",
+      link: "https://github.com/codiacademy/ChallengeVII-tarde-ufjf.git",
     },
   ];
 
