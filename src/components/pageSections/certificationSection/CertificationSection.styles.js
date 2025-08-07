@@ -49,7 +49,6 @@ export const CertificateCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* Garante que os cards tenham a mesma altura */
 
   &:hover {
     transform: translateY(-8px);
