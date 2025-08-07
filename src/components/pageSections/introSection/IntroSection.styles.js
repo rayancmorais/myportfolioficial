@@ -36,14 +36,13 @@ export const IntroSectionBriefing2 = styled.h2`
   font-size: 56px;
   margin-top: 10px;
   font-weight: 600;
-  font-family: Inconsolata;
   @media (max-width: 768px) {
     font-size: 32px;
   }
 `;
 
 export const IntroSectionBriefing3 = styled.h6`
-  font-family: Inconsolata;
+  font-family: Maven Pro;
   color: #878ea1;
   font-size: 20px;
   margin-top: 20px;
