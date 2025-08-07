@@ -26,7 +26,7 @@
   "project_section_obj_description2": "It is a full-stack web application that serves as a Netflix-style movie platform. It features an interface where users can browse, search for, and discover movies. The project highlights my ability to build dynamic, data-driven applications with a focus on user experience.",
   "project_section_obj_description3": "Chronos is a web-based Pomodoro Technique Timer designed to help users boost their productivity and manage their time effectively. Inspired by the popular time management technique, this application breaks down work into focused intervals, separated by short breaks.",
   "project_section_obj_description4": "Collaborating with a development team, I designed the UX/UI on Figma and we built the front-end challange for a financial management interface for Codi Academy units. We developed the design into a functional and responsive interface using React. The final product is currently deployed on Vercel, delivering a clean, intuitive user experience with a scalable architecture, ready for future API integration.",
-  "portfolio_section_title": "Portfolios",
+  "portfolio_section_title": "Portfolio",
   "portfolio_section_subtitle": "Explore my detailed  education, works, projects and more in my PDF portfolio.<br /> Click the button below to view or download it.",
   "portfolio_section_button": "View PDF Portfolio",
   "contact_section_title": "Contacts",
