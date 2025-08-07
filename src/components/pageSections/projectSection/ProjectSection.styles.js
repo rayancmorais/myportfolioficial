@@ -5,7 +5,7 @@ export const SectionContainer = styled.section`
   padding: 4rem 2rem;
   background-color: #16181d;
   text-align: center;
- font-family: Inconsolata;
+  font-family: Inconsolata;
   color: #333;
 
   @media (max-width: 768px) {
@@ -20,17 +20,6 @@ export const SectionTitle = styled.h2`
   position: relative;
   display: inline-block;
   font-family: Inconsolata;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    border-radius: 2px;
-  }
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -123,7 +112,7 @@ export const TechnologyTag = styled.span`
 
 export const ProjectLink = styled.a`
   display: inline-block;
-  background-color:#3498db;
+  background-color: #3498db;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
@@ -134,7 +123,7 @@ export const ProjectLink = styled.a`
   align-self: flex-start;
 
   &:hover {
-    background-color:#2980b9;
+    background-color: #2980b9;
     transform: translateY(-2px);
   }
 `;

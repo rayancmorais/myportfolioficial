@@ -9,18 +9,6 @@ export const SectionTitle = styled.h2`
   position: relative;
   display: inline-block;
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: rgb(49, 142, 248);
-    border-radius: 2px;
-  }
-
   @media (max-width: 768px) {
     font-size: 2rem;
     margin-bottom: 2rem;
