@@ -5,72 +5,87 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # dev server with Turbopack (http://localhost:3000)
-npm run build    # production build
-npm run start    # serve production build
-npm run lint     # ESLint
-npx tsc --noEmit # TypeScript check without emitting files
+npm run dev            # dev server with Turbopack (http://localhost:3000)
+npm run build          # production build
+npm run start          # serve production build
+npm run lint           # ESLint
+npm run type-check     # tsc --noEmit
+npm test               # Vitest (single run)
+npm run test:watch     # Vitest watch mode
+npm run test:coverage  # Vitest + v8 coverage (thresholds: 70% lines/functions, 60% branches)
+npm run ci             # type-check → lint → test → build (mirrors CI)
+
+npx tsx scripts/seed-rag.ts   # embed RAG_DOCUMENTS and upsert into Supabase pgvector
 ```
 
-No test suite yet.
+Run a single test file: `npm test -- src/tests/types.test.ts`
+Filter by test name: `npm test -- -t "<pattern>"`
 
 ## Stack
 
-| Layer | Choice |
-|---|---|
-| Framework | Next.js 16 (App Router, RSC) |
-| Language | TypeScript 5 |
-| Styling | Tailwind CSS v4 (PostCSS, CSS-first config) |
-| Animation | Framer Motion 12 |
-| Icons | Lucide React |
-| Merge utility | `clsx` + `tailwind-merge` via `cn()` in `src/lib/utils.ts` |
+Next.js 16 (App Router, RSC, PPR) · React 19 · TypeScript 5 · Tailwind v4 (CSS-first) · Framer Motion 12 · Vercel AI SDK (`ai`, `@ai-sdk/openai`, `@ai-sdk/react`) · Supabase (pgvector) · Vitest + Testing Library · Mermaid
 
 ## Architecture
 
-Single-page portfolio. The root `src/app/page.tsx` is a **React Server Component** — it renders zero client JS unless it imports a `"use client"` boundary.
+Single-page portfolio (`src/app/page.tsx`) plus dynamic case-study pages (`src/app/projects/[slug]/page.tsx`). The main interactive feature is a RAG-backed "Digital Twin" chat that answers questions about Rayan's work.
 
-### Rendering boundary pattern
+### Rendering boundaries (RSC / client / PPR)
+
+The root page exports `cacheComponents = true` (Next.js 16 Partial Pre-Rendering). The static shell is prerendered at build time; `ChatSection` streams in via `<Suspense>` without blocking. Only components that need hooks, event listeners, or Framer Motion are `"use client"`:
 
 ```
-page.tsx  (RSC — static, no hydration)
-  └─ ProjectsGrid  ("use client" — single hydration boundary)
-       └─ BentoProjectCard  (inherits client context)
+page.tsx                  (RSC, cacheComponents = true)
+  ├─ ProjectsGrid         ("use client") → BentoProjectCard ×N
+  └─ ChatSection          (RSC, wraps ChatInterface in <Suspense>)
+       └─ ChatInterface   ("use client", useChat hook)
 ```
 
-This keeps the shell prerendered; only interactive/animated components hydrate.
+Adding a new section: create `src/components/sections/<name>/<Name>.tsx`, mark `"use client"` only if needed, import in `page.tsx`.
 
-### Adding a new page section
+Case-study pages (`/projects/[slug]`) use `generateStaticParams()` and `generateMetadata()` — they're fully static at build time, driven by `src/lib/data/case-studies.ts`.
 
-1. Create `src/components/sections/<name>/<Name>.tsx`
-2. Mark it `"use client"` **only** if it uses hooks, event listeners, or Framer Motion
-3. Import and render it in `src/app/page.tsx`
+### RAG / chat pipeline
 
-### Tailwind v4 (CSS-first)
+`POST /api/chat` (`src/app/api/chat/route.ts`) → `retrieveContext()` (`src/lib/rag.ts`) → context injected into system prompt → `streamText(openai("gpt-4o-mini"), maxTokens: 600)`.
 
-There is no `tailwind.config.ts`. All customisation lives in `src/app/globals.css` via `@theme inline {}`. To add a new design token:
+Retrieval **degrades gracefully**:
+- With env configured: embed query via `text-embedding-3-small` (1536 dims), call `match_documents` pgvector RPC (cosine, threshold 0.65).
+- Without env: keyword fallback over in-memory `RAG_DOCUMENTS`. **Chat always works** with no env set.
 
-```css
-@theme inline {
-  --color-my-token: #hexvalue;
-}
+The knowledge base is hardcoded in `src/lib/rag-documents.ts`. To update what the twin knows, edit that file then run `npx tsx scripts/seed-rag.ts` to re-embed. `src/lib/supabase.ts` returns `null` when env is missing and contains the SQL migration (pgvector extension, `documents` table, `match_documents` function) as a comment.
+
+Required env vars in `.env.local` (all optional — only needed for vector search):
+```
+OPENAI_API_KEY=
+NEXT_PUBLIC_SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-Then use it as `text-my-token` / `bg-my-token` in Tailwind utilities.
+### Data as code
 
-### Motion conventions
+All content is typed TypeScript (no JSON) in `src/lib/data/`:
+- `projects.ts` — home-page project grid cards
+- `case-studies.ts` — full case studies; exposes `getCaseStudy(slug)` and `getAllSlugs()`
+- `diagrams.ts` — Mermaid architecture flowcharts rendered by `ArchitectureDiagram`
+- `skills.ts` — tech stack grouped by category
 
-- All Framer Motion components live in `src/components/motion/`
-- Spring config: `{ stiffness: 420, damping: 30, mass: 0.5 }` (Ease-Out-Expo feel)
-- Stagger: `delay: index * 0.08` on `whileInView` variants
-- `MagneticButton` — wraps any `<button>` and shifts it toward the cursor
-- `BentoProjectCard` — 3D-tilt card with cursor-tracked shimmer and staggered entrance
-
-### Static content
-
-Project data lives in `src/lib/data/projects.ts` (typed array, not JSON). To add or edit a project, update that file only — no component changes needed.
-
-Project images live in `public/images/`.
+To add or edit content, update only these files — no component changes needed. Project images go in `public/images/`.
 
 ### Types
 
-Shared interfaces in `src/types/index.ts` (`Project`, `Certificate`).
+All domain types live in `src/types/*` and re-export from `src/types/index.ts`. Some files carry runtime values too:
+- `motion.ts` — `SPRINGS` presets, `EASE_OUT_EXPO`, and factories `fadeUp()` / `staggerContainer()`. Use these rather than inlining spring/variant config in components.
+- `api.ts` — Zod schemas (`ChatRequestSchema`, etc.) and `validateEnv()`.
+- `ai.ts` — RAG types (`RAGDocument`, `RAGRetrievalResult`, `DigitalTwinConfig`).
+
+### Motion conventions
+
+Framer Motion components live in `src/components/motion/`. Canonical spring: `{ stiffness: 420, damping: 30, mass: 0.5 }`. Entrance stagger: `delay: index * 0.08`. Use `fadeUp()` / `staggerContainer()` from `src/types/motion.ts` for consistency.
+
+### Tailwind v4 (CSS-first)
+
+No `tailwind.config.ts`. Design tokens live in `src/app/globals.css` under `@theme inline { --color-my-token: #hex; }`, then used as `text-my-token` / `bg-my-token`. Path alias: `@/*` → `./src/*`.
+
+### CI
+
+`.github/workflows/ci.yml` runs type-check → lint → test:coverage → build on push/PR to `main`. The build job stubs all env vars. Run `npm run ci` locally before pushing.
