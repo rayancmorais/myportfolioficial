@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* ── Force dark color scheme ────────────────────────────────────────────── */
+:root {
+  color-scheme: dark;
+}
+
+/* ── Design tokens ──────────────────────────────────────────────────────── */
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Glass surface tokens */
+  --color-glass-bg: rgba(255 255 255 / 0.04);
+  --color-glass-border: rgba(255 255 255 / 0.08);
+  --color-glass-border-hover: rgba(99 102 241 / 0.35);
+
+  /* Accent */
+  --color-accent: #6366f1;      /* indigo-500 */
+  --color-accent-dim: #4f46e5;  /* indigo-600 */
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #09090b; /* zinc-950 */
+  color: #fafafa;            /* zinc-50  */
+  font-family: var(--font-geist-sans, Arial, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar (subtle, dark) ───────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(255 255 255 / 0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255 255 255 / 0.2); }
